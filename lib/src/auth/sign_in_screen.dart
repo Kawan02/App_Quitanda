@@ -162,8 +162,8 @@ class SignInScreen extends StatelessWidget {
                             ),
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(18))),
-                        onPressed: () {
-                          Navigator.of(context).push(
+                        onPressed: () async {
+                          await Navigator.of(context).push(
                             MaterialPageRoute(
                               builder: (BuildContext context) => SignUpScreen(),
                             ),
