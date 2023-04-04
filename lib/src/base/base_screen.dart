@@ -37,7 +37,7 @@ class _BaseScreenState extends State<BaseScreen> {
           });
         },
         type: BottomNavigationBarType.fixed,
-        backgroundColor: CustomColors.customSwatchColor,
+        backgroundColor: Colors.green,
         unselectedItemColor: Colors.white.withAlpha(120),
         selectedItemColor: Colors.white,
         items: const [
