@@ -1,10 +1,12 @@
+import 'dart:async';
 import 'package:app_quitanda/src/home/home_tab.dart';
 import 'package:flutter/material.dart';
-
-import '../config/custom_color.dart';
+import 'package:local_session_timeout/local_session_timeout.dart';
 
 class BaseScreen extends StatefulWidget {
-  const BaseScreen({super.key});
+  StreamController<SessionState> sessionStateStream;
+
+  BaseScreen({super.key, required this.sessionStateStream});
 
   @override
   State<BaseScreen> createState() => _BaseScreenState();

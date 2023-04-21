@@ -1,12 +1,17 @@
+import 'dart:async';
+
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:app_quitanda/src/auth/sign_up_screen.dart';
 import 'package:app_quitanda/src/base/base_screen.dart';
 import 'package:app_quitanda/src/config/custom_color.dart';
 import 'package:flutter/material.dart';
+import 'package:local_session_timeout/local_session_timeout.dart';
 import 'components/custom_text_field.dart';
 
 class SignInScreen extends StatelessWidget {
-  const SignInScreen({super.key});
+  StreamController<SessionState> sessionStateStream;
+
+  SignInScreen({super.key, required this.sessionStateStream});
 
   @override
   Widget build(BuildContext context) {
@@ -101,13 +106,16 @@ class SignInScreen extends StatelessWidget {
                           ),
                         ),
                         onPressed: () {
+                          sessionStateStream.add(SessionState.stopListening);
                           Navigator.of(context).pushReplacement(
                             MaterialPageRoute(
                               builder: (context) {
-                                return const BaseScreen();
+                                return BaseScreen(
+                                    sessionStateStream: sessionStateStream);
                               },
                             ),
                           );
+                          sessionStateStream.add(SessionState.startListening);
                         },
                         child: const Text(
                           "Entrar",
