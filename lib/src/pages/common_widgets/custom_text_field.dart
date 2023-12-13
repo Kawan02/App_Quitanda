@@ -6,12 +6,16 @@ class CustomTextField extends StatefulWidget {
   final String labelText;
   final bool isSecret;
   final List<TextInputFormatter>? inputFormatters;
+  final String? initialValue;
+  final bool readOnly;
   const CustomTextField({
     super.key,
     required this.icon,
     required this.labelText,
     this.isSecret = false,
     this.inputFormatters,
+    this.initialValue,
+    this.readOnly = false,
   });
 
   @override
@@ -34,6 +38,8 @@ class _CustomTextFieldState extends State<CustomTextField> {
       padding: const EdgeInsets.only(bottom: 15),
       child: TextFormField(
         inputFormatters: widget.inputFormatters,
+        initialValue: widget.initialValue,
+        readOnly: widget.readOnly,
         obscureText: isObscure,
         decoration: InputDecoration(
           prefixIcon: Icon(widget.icon),

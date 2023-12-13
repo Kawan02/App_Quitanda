@@ -3,7 +3,7 @@ import 'package:app_quitanda/src/pages/auth/sign_up_screen.dart';
 import 'package:app_quitanda/src/pages/base/base_screen.dart';
 import 'package:app_quitanda/src/config/custom_color.dart';
 import 'package:flutter/material.dart';
-import 'components/custom_text_field.dart';
+import '../common_widgets/custom_text_field.dart';
 
 class SignInScreen extends StatelessWidget {
   const SignInScreen({super.key});
