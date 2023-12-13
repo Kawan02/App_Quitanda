@@ -1,15 +1,13 @@
-import 'package:app_quitanda/src/auth/components/custom_text_field.dart';
+import 'package:app_quitanda/src/pages/auth/components/custom_text_field.dart';
 import 'package:flutter/material.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
-import '../config/custom_color.dart';
+import '../../config/custom_color.dart';
 
 class SignUpScreen extends StatelessWidget {
   SignUpScreen({super.key});
 
-  final cpfFormatter = MaskTextInputFormatter(
-      mask: "###.###.###-##", filter: {"#": RegExp(r"[0-9]")});
-  final celularFormatter = MaskTextInputFormatter(
-      mask: "(##) #####-####", filter: {"#": RegExp(r"[0-9]")});
+  final cpfFormatter = MaskTextInputFormatter(mask: "###.###.###-##", filter: {"#": RegExp(r"[0-9]")});
+  final celularFormatter = MaskTextInputFormatter(mask: "(##) #####-####", filter: {"#": RegExp(r"[0-9]")});
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.of(context).size;
@@ -37,8 +35,7 @@ class SignUpScreen extends StatelessWidget {
                   ),
                   // Formulário
                   Container(
-                    padding: const EdgeInsets.symmetric(
-                        vertical: 40, horizontal: 32),
+                    padding: const EdgeInsets.symmetric(vertical: 40, horizontal: 32),
                     decoration: const BoxDecoration(
                       color: Colors.white,
                       borderRadius: BorderRadius.vertical(

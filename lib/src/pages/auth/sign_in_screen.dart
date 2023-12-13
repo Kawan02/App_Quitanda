@@ -1,6 +1,6 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:app_quitanda/src/auth/sign_up_screen.dart';
-import 'package:app_quitanda/src/base/base_screen.dart';
+import 'package:app_quitanda/src/pages/auth/sign_up_screen.dart';
+import 'package:app_quitanda/src/pages/base/base_screen.dart';
 import 'package:app_quitanda/src/config/custom_color.dart';
 import 'package:flutter/material.dart';
 import 'components/custom_text_field.dart';
@@ -52,8 +52,7 @@ class SignInScreen extends StatelessWidget {
                     SizedBox(
                       height: 30,
                       child: DefaultTextStyle(
-                        style:
-                            const TextStyle(fontSize: 25, color: Colors.white),
+                        style: const TextStyle(fontSize: 25, color: Colors.white),
                         child: AnimatedTextKit(
                           pause: Duration.zero,
                           repeatForever: true,
@@ -72,8 +71,7 @@ class SignInScreen extends StatelessWidget {
                 ),
               ),
               Container(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 32, vertical: 40),
+                padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 40),
                 decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.vertical(
@@ -123,8 +121,7 @@ class SignInScreen extends StatelessWidget {
                           onPressed: () {},
                           child: Text(
                             "Esqueceu a senha?",
-                            style: TextStyle(
-                                color: CustomColors.customContrastColor),
+                            style: TextStyle(color: CustomColors.customContrastColor),
                           ),
                         ),
                       ),
@@ -160,8 +157,7 @@ class SignInScreen extends StatelessWidget {
                               width: 2.0,
                               color: Colors.green,
                             ),
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(18))),
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18))),
                         onPressed: () async {
                           await Navigator.of(context).push(
                             MaterialPageRoute(
