@@ -18,9 +18,13 @@ class CartTab extends StatefulWidget {
 class _CartTabState extends State<CartTab> {
   final UtilsServices utilsServices = UtilsServices();
 
-  void removeItemFromCart(CartItemModel item) {
+  void removeItemFromCart(CartItemModel cartItem) {
     setState(() {
-      app_data.cartItems.remove(item);
+      app_data.cartItems.remove(cartItem);
+      utilsServices.showToast(
+        message: "${cartItem.item.itemName} removido(a) do carrinho",
+        context: context,
+      );
     });
   }
 
@@ -98,7 +102,7 @@ class _CartTabState extends State<CartTab> {
 
                       if (result ?? false) {
                         // ignore: use_build_context_synchronously
-                        showDialog(
+                        return showDialog(
                           context: context,
                           builder: (_) {
                             return PaymentDialog(
@@ -107,6 +111,13 @@ class _CartTabState extends State<CartTab> {
                           },
                         );
                       }
+
+                      // ignore: use_build_context_synchronously
+                      return utilsServices.showToast(
+                        message: "Pedido não confirmado",
+                        isError: true,
+                        context: context,
+                      );
                     },
                     child: const Text(
                       "Concluir pedido",
