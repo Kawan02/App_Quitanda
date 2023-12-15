@@ -43,6 +43,7 @@ dependencies:
   qr_flutter: ^4.1.0
   add_to_cart_animation: ^0.0.7
   motion_toast: ^2.7.10
+  shimmer: ^3.0.0
 
 
 dev_dependencies:
