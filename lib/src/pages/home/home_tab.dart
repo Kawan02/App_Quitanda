@@ -2,6 +2,7 @@ import 'package:add_to_cart_animation/add_to_cart_animation.dart';
 import 'package:add_to_cart_animation/add_to_cart_icon.dart';
 import 'package:app_quitanda/src/config/app_data.dart' as app_data;
 import 'package:app_quitanda/src/config/custom_color.dart';
+import 'package:app_quitanda/src/pages/common_widgets/app_name_widget.dart';
 import 'package:app_quitanda/src/pages/home/components/category_tile.dart';
 import 'package:app_quitanda/src/pages/home/components/item_tile.dart';
 import 'package:app_quitanda/src/services/utils_services.dart';
@@ -34,25 +35,7 @@ class _HomeTabState extends State<HomeTab> {
         backgroundColor: Colors.transparent,
         elevation: 0,
         centerTitle: true,
-        title: Text.rich(
-          TextSpan(
-            style: const TextStyle(fontSize: 30),
-            children: [
-              TextSpan(
-                text: "App",
-                style: TextStyle(
-                  color: CustomColors.customSwatchColor,
-                ),
-              ),
-              TextSpan(
-                text: "quitanda",
-                style: TextStyle(
-                  color: CustomColors.customContrastColor,
-                ),
-              ),
-            ],
-          ),
-        ),
+        title: const AppNameWidget(),
         actions: [
           Padding(
             padding: const EdgeInsets.only(top: 15, right: 15),
