@@ -44,6 +44,7 @@ dependencies:
   add_to_cart_animation: ^0.0.7
   motion_toast: ^2.7.10
   shimmer: ^3.0.0
+  get: ^4.6.6
 
 
 dev_dependencies:

@@ -1,10 +1,10 @@
 import 'package:animated_text_kit/animated_text_kit.dart';
-import 'package:app_quitanda/src/pages/auth/sign_up_screen.dart';
-import 'package:app_quitanda/src/pages/base/base_screen.dart';
 import 'package:app_quitanda/src/config/custom_color.dart';
 import 'package:app_quitanda/src/pages/common_widgets/app_name_widget.dart';
+import 'package:app_quitanda/src/pages/common_widgets/custom_text_field.dart';
+import 'package:app_quitanda/src/pages_routes/app_pages.dart';
 import 'package:flutter/material.dart';
-import '../common_widgets/custom_text_field.dart';
+import 'package:get/get.dart';
 
 class SignInScreen extends StatelessWidget {
   const SignInScreen({super.key});
@@ -80,14 +80,8 @@ class SignInScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(18),
                           ),
                         ),
-                        onPressed: () {
-                          Navigator.of(context).pushReplacement(
-                            MaterialPageRoute(
-                              builder: (context) {
-                                return const BaseScreen();
-                              },
-                            ),
-                          );
+                        onPressed: () async {
+                          await Get.offNamed(PagesRoutes.baseRoute);
                         },
                         child: const Text(
                           "Entrar",
@@ -135,17 +129,16 @@ class SignInScreen extends StatelessWidget {
                       height: 50,
                       child: OutlinedButton(
                         style: OutlinedButton.styleFrom(
-                            side: const BorderSide(
-                              width: 2.0,
-                              color: Colors.green,
-                            ),
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(18))),
+                          side: const BorderSide(
+                            width: 2.0,
+                            color: Colors.green,
+                          ),
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18),
+                          ),
+                        ),
                         onPressed: () async {
-                          await Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (BuildContext context) => SignUpScreen(),
-                            ),
-                          );
+                          await Get.toNamed(PagesRoutes.sigUpRoute);
                         },
                         child: const Text(
                           "Criar conta",
