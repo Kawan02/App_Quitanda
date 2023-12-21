@@ -1,5 +1,5 @@
-import 'package:app_quitanda/src/pages/auth/sign_in_screen.dart';
-import 'package:app_quitanda/src/pages/auth/sign_up_screen.dart';
+import 'package:app_quitanda/src/pages/auth/view/sign_in_screen.dart';
+import 'package:app_quitanda/src/pages/auth/view/sign_up_screen.dart';
 import 'package:app_quitanda/src/pages/base/base_screen.dart';
 import 'package:app_quitanda/src/pages/splash/splash_screen.dart';
 import 'package:get/get.dart';
