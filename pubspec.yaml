@@ -45,6 +45,7 @@ dependencies:
   motion_toast: ^2.7.10
   shimmer: ^3.0.0
   get: ^4.6.6
+  dio: ^5.4.0
 
 
 dev_dependencies:
