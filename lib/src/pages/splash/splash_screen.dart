@@ -1,6 +1,6 @@
 import 'package:app_quitanda/src/config/custom_color.dart';
+import 'package:app_quitanda/src/pages/auth/controller/auth_controller.dart';
 import 'package:app_quitanda/src/pages/common_widgets/app_name_widget.dart';
-import 'package:app_quitanda/src/pages_routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -15,13 +15,9 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     super.initState();
-
-    Future.delayed(
-      const Duration(seconds: 2),
-      () {
-        Get.offNamed(PagesRoutes.sigInRoute);
-      },
-    );
+    if (GetPlatform.isWeb) {
+      Get.find<AuthController>().validateToken();
+    }
   }
 
   @override

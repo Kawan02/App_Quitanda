@@ -115,7 +115,7 @@ class SignInScreen extends StatelessWidget {
                                         String email = emailController.text;
                                         String password = passwordController.text;
 
-                                        authController.signIn(email: email, password: password);
+                                        authController.signIn(email: email, password: password, context: context);
                                       } else {
                                         print("Inválido!");
                                       }
